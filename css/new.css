@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.page-header {
+  background: linear-gradient(to left, #126004, #1a8317);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.page-header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.page-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+}
+
+.news-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image {
+  position: relative;
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.news-date {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #126004;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.news-content {
+  padding: 1.2rem;
+}
+
+.news-content h2 {
+  color: #126004;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.news-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.news-content a {
+  color: #1a8317;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.news-content a:hover {
+  color: #0e5b0c;
+}
+
+/* شاشات أكبر */
+@media (min-width: 768px) {
+  .news-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .news-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

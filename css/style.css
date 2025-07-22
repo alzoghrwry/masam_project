@@ -1,0 +1,568 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  direction: rtl;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* شريط التواصل */
+.top-bar {
+    background: #4fc6e1;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.top-bar .social-icons a {
+  color: hsl(239, 86%, 50%);
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+a .lan {
+  border: 1px solid #333;
+  margin-right: 20px;
+  width: auto;
+  
+}
+#theme-toggle {
+
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #cac5c5;
+  cursor: pointer;
+  z-index: 2000;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+body.dark-mode #theme-toggle {
+  color: #f5f5f5;
+}
+
+
+/* الهيدر والناف بار */
+header {
+  background: hsl(240, 8%, 95%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 100;
+  display: table;
+  width: 100%;
+  
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+.logo {
+  width: 100px;
+  height: 80px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a2a6c;
+  margin-right: 20px;
+}
+nav {
+  position: relative;
+}
+ nav a {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: #fff; /* حسب لونك */
+}
+
+/* خط سفلي عند :hover أو .active */
+nav a:hover::after,
+nav a.active::after,
+nav a:focus::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #da4804; /* لون الخط */
+  transition: all 0.3s ease;
+}
+
+/* تخفي الخط عند البداية */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.menu-icon {
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1a2a6c;
+  z-index: 1001;
+}
+
+/* خلفية رمادية عند فتح القائمة */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.overlay.active {
+  display: block;
+}
+
+/* قائمة الجوال */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+   right: -300px;
+   width: 279px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  padding-top: 4rem;
+  z-index: 1001;
+}
+.nav-links.show {
+  right: 0;
+}
+.nav-links li {
+  border-bottom: 1px solid #eee;
+}
+.nav-links li a {
+  display: block;
+  padding: 1rem;
+  color: #1a2a6c;
+  font-size: 1.1rem;
+}
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  background: hsl(249, 8%, 66%);
+}
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  padding: 0.75rem 1rem;
+}
+.dropdown-menu li a {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+}
+.mobile-search {
+  padding: 1rem;
+
+  display: block;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.search-input {
+  display: none;
+  position: absolute;
+  width: 200px;
+  padding: 0.5rem;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  z-index: 2000;
+  background-color: #fff;
+}
+
+/* عند التفعيل */
+.search.show .search-input {
+  display: block;
+}
+
+/* إخفاء أيقونة البحث في الشاشات الكبيرة */
+/* @media (min-width: 768px) {
+  .mobile-search {
+    display: none;
+  }
+} */
+
+
+
+
+/* السلايدر */
+.slideshow-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* حاوية السلايدر */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* نص التسمية */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* النقاط التفاعلية */
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* حركة التلاشي */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* للموبايل */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+h3{
+  color: #0c0479;
+  position: absolute;
+  bottom: 50px;
+  left: 80px;
+  z-index: 1500;
+}
+
+ .hero {
+      background: linear-gradient(to right, #126004, #28a745);
+
+        height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+    }
+    .hero h1 {
+      font-size: 36px;
+    }
+    .container1 {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .section2 {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #005b8f;
+      margin-bottom: 15px;
+    }
+    ul, ol {
+      padding-right: 20px;
+    }
+    blockquote {
+      background-color: #e6f0fa;
+      padding: 20px;
+      border-right: 5px solid #007acc;
+      font-style: italic;
+      margin: 30px 0;
+    }
+    
+/* الاحصائيات */
+.stats {
+     max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    text-align: center;
+    flex-direction: column
+    }
+
+    .stats-section h2 {
+     font-size: 2rem;
+    margin: 6rem 0 0;
+    color: #093a03;
+    text-align: center;
+    }
+
+    /* .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    } */
+
+    .stat-card {
+    background: #fff;
+    padding: 1.5rem;
+    display: flex;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    margin-bottom: 6px;
+    align-items: center;
+
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+    width: 119px;
+    border-color:#025215 ;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #da4804;
+    }
+
+.stat-label {
+      font-size: 1.3rem;
+      color: #383636;
+       position: relative;
+       padding-bottom: 0.5rem
+    }
+.stat-card::after {
+  content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 1rem;
+    height: 5px;
+    width: 91%;
+    background-color: #007acc;
+    border-radius: 2px;
+}
+/* footer style */
+.main-footer {
+  background-color: #2d3d3c;
+  color: #fff;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-brand,
+.footer-links,
+.footer-social {
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  width: 90px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+ text-align: center;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+      text-align: center;
+}
+
+.footer-links li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #da4804;
+}
+
+.social-icons a {
+  color: #ccc;
+  font-size: 1.3rem;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00bcd4;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+/* تحسين المظهر للشاشات الأكبر */
+
+
+
+    @media (min-width: 768px) {
+  .menu-icon,
+  .overlay {
+    display: none;
+  }
+ 
+  .nav-links {
+    display: flex !important;
+    position: static;
+    height: auto;
+    flex-direction: row;
+    background: none;
+    padding-top: 0;
+    width: auto;
+    box-shadow: none;
+    align-items: center;
+    
+  }
+  .nav-links li {
+    border: none;
+  }
+  .nav-links li a {
+    padding: 0.5rem 1rem;
+    font-size: 17px;
+  }
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: hsl(249, 8%, 66%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+    min-width: 160px;
+    z-index: 999;
+    flex-direction: column;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    background-color: #ddd;
+  }
+  .stats {
+     max-width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 2rem 1rem;
+        text-align: center;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+
+}
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: right;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-social {
+    margin-bottom: 0;
+    padding: 0 1rem;
+  }
+}
+
