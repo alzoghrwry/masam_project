@@ -1,34 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
-}
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f2f4f8;
-  color: #333;
-  line-height: 1.6;
-}
-
-.page-header {
-  background: linear-gradient(to left, #126004, #1a8317);
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.page-header h1 {
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-}
-
-.page-header p {
-  font-size: 1rem;
-  opacity: 0.9;
-}
 
 .news-container {
   display: grid;
@@ -98,7 +68,7 @@ body {
   color: #0e5b0c;
 }
 
-/* شاشات أكبر */
+
 @media (min-width: 768px) {
   .news-container {
     grid-template-columns: repeat(2, 1fr);
@@ -110,3 +80,5 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+

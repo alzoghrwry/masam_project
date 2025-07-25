@@ -4,17 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مشروع مسام لنزع الألغام</title>
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  
 </head>
 <body>
+  <header>
   <div class="top-bar">
     <div class="lanug">
-      <a href="" class="lan">Enghish</a>
+      <button class="lan">Enghish</button> 
     </div>
     <div class="social-icons">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -26,11 +28,8 @@
   <i class="fas fa-moon" id="icon-dark"></i>
   <i class="fas fa-sun" id="icon-light" style="display: none;"></i>
 </button>
-
   </div>
-
-  <!-- الهيدر والناف بار -->
-  <header>
+  <div class="navbar">
     <div class="container">
       <div class="">
         <img src="../images/masam-logo-v2.png" alt="" class="logo">
@@ -40,10 +39,10 @@
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">الرئيسية</a></li>
+         <li><a href="index.html">الرئيسية</a></li>
           <li><a href="about.html"> مسام</a></li>
           <li><a href="news.html">الاخبار  </a></li>
-          <li><a href="#">قصص النجاح</a></li>
+          <li><a href="story.html">قصص النجاح</a></li>
           <li class="dropdown">
             <a href="#"> اعلام مسام<i class="fas fa-caret-down"></i></a>
             <ul class="dropdown-menu">
@@ -56,12 +55,14 @@
            <li class="mobile-search">
           <div class="search">
             <i class="fas fa-search search-icon"></i>
-            <input type="text" class="search-input" placeholder="ابحث...">
+            <input type="text" class="search-input" placeholder="ابحث..." oninput="toggleClearIcon(this)">
+            
           </div>
         </li>
         </ul>
       </nav>
      
+    </div>
     </div>
   </header>
 
@@ -124,7 +125,7 @@
         <li><a href="#">مسام</a></li>
         <li><a href="#">شاركنا رأيك</a></li>
         <li><a href="#">سياسة الخصوصية</a></li>
-        
+  
       </ul>
     </div> 
   </div>
@@ -141,6 +142,10 @@
     <p>جميع الحقوق محفوظة &copy; <span id="year"></span> مشروع مسام</p>
   </div>
 </footer>
-   <script src="../js/main.js"></script>
+<button id="ScrollBtn" >
+  ↑
+</button>
+<script src="../js/main.js"></script>
+
 </body>
 </html>
