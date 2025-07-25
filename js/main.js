@@ -208,7 +208,7 @@ function validateForm() {
   const email = document.getElementById("email");
   const message = document.getElementById("message");
 
-  // التحقق من الحقول
+
   if (!name.value.trim()) {
     alert("يرجى إدخال الاسم");
     name.focus();
