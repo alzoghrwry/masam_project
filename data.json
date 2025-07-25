@@ -1,22 +1,22 @@
 [
 
   {
-    "icon": "../images/icon-3.png",
+    "icon": "images/icon-3.png",
     "number": "6,822",
     "label": "مجموع الألغام المضادة للأفراد"
   },
   {
-   "icon": "../images/icon-1.png",
+   "icon": "images/icon-1.png",
     "number": "146,830",
     "label": "مجموع الألغام المضادة للدبابات"
   },
   {
-   "icon": "../images/icon-2.png",
+   "icon": "images/icon-2.png",
     "number": "343,570",
     "label": "مجموع الذخائر غير المنفجرة"
   },
   {
-    "icon": "../images/icon-4.png",
+    "icon": "images/icon-4.png",
     "number": "8,244",
     "label": "مجموع العبوات الناسفة"
   }
