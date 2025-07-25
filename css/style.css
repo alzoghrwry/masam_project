@@ -17,7 +17,7 @@ html, body {
   overflow-x: hidden;
   font-family: 'Cairo', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
@@ -73,6 +73,7 @@ a .lan {
 body.dark-mode {
   background-color: #302e2e;
   color: #f5f5f5;
+  z-index: 1100;
 }
 body.dark-mode #theme-toggle {
   color: #f5f5f5;
@@ -110,7 +111,7 @@ nav {
   position: relative;
   text-decoration: none;
   padding-bottom: 5px;
-  color: #fff; /* حسب لونك */
+  color: #fff;
 }
 
 
@@ -335,7 +336,8 @@ h3{
     justify-content: space-between;
     padding: 2rem 1rem;
     text-align: center;
-    flex-direction: column
+    flex-direction: column;
+    background: linear-gradient(to right, #09992a8c, #8cc19a40);
     }
 
     .stats-section h2 {
@@ -352,7 +354,7 @@ h3{
     } */
 
     .stat-card {
-    background: #fff;
+    /* background: #fff; */
     padding: 1.5rem;
     display: flex;
     border-radius: 16px;
@@ -376,7 +378,7 @@ h3{
     margin-bottom: 1rem;
     color: #28a745;
     margin-bottom: 1rem;
-    width: 119px;
+    width: 80px;
     border-color:#025215 ;
     }
 
@@ -557,6 +559,71 @@ h3{
      margin-bottom: 8px;
 
    }
+   .contact-section {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background-color: #1a2a6c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0f1b3d;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-form, .map-container {
+    flex: 1;
+  }
+
+  .contact-form {
+    margin-left: 20px;
+  }
+}
      @media (min-width: 768px) {
   .story-container {
     grid-template-columns: repeat(2, 1fr);

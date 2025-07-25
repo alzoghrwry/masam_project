@@ -203,3 +203,37 @@ catch (error) {
 
 
 });
+function validateForm() {
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  // التحقق من الحقول
+  if (!name.value.trim()) {
+    alert("يرجى إدخال الاسم");
+    name.focus();
+    return false;
+  }
+
+  if (!email.value.trim() || !validateEmail(email.value)) {
+    alert("يرجى إدخال بريد إلكتروني صحيح");
+    email.focus();
+    return false;
+  }
+
+  if (!message.value.trim()) {
+    alert("يرجى إدخال الرسالة");
+    message.focus();
+    return false;
+  }
+
+  alert("تم إرسال الرسالة بنجاح ✅");
+  return true;
+}
+
+// التحقق من البريد الإلكتروني
+function validateEmail(email) {
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(email);
+}
+
